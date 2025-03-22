@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Kitty Quiz 🎀</title>
+    <link rel="icon" href="icon.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background-color: #ffe6f2;
+      }
+      h1 {
+        color: #ff3399;
+      }
+      .quiz-container {
+        background: white;
+        width: 60%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .question {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+      .options label {
+        display: block;
+        margin: 5px;
+        font-size: 16px;
+      }
+      .submit-btn {
+        background: linear-gradient(to right, #ff66b2, #ff99cc);
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .submit-btn:hover {
+        background: linear-gradient(to right, #ff3385, #ff66b2);
+        transform: scale(1.1);
+      }
+      .result {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎀 Hello Kitty Fan Quiz 🎀</h1>
+    <div class="quiz-container">
+      <form id="quizForm">
+        <div class="question">
+          <p>1. What is Hello Kitty’s favorite color? 🎀</p>
+          <div class="options">
+            <label><input type="radio" name="q1" value="pink" /> Pink</label>
+            <label><input type="radio" name="q1" value="blue" /> Blue</label>
+            <label><input type="radio" name="q1" value="red" /> Red</label>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+          <p>2. What is Hello Kitty’s real name? 🐱</p>
+          <div class="options">
+            <label
+              ><input type="radio" name="q2" value="kittywhite" /> Kitty
+              White</label
+            >
+            <label
+              ><input type="radio" name="q2" value="mimmywhite" /> Mimmy
+              White</label
+            >
+            <label
+              ><input type="radio" name="q2" value="hello-chan" />
+              Hello-Chan</label
+            >
+          </div>
+        </div>
+        <div class="question">
+          <p>3. What pet does Hello Kitty have? 🐾</p>
+          <div class="options">
+            <label><input type="radio" name="q3" value="cat" /> A cat</label>
+            <label><input type="radio" name="q3" value="dog" /> A dog</label>
+            <label
+              ><input type="radio" name="q3" value="hamster" /> A hamster</label
+            >
+          </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="calculateScore()">
+          Submit Answers 💖
+        </button>
+      </form>
+      <p class="result" id="result"></p>
+    </div>
+
+    <script>
+      function calculateScore() {
+        let score = 0;
+        let answers = {
+          q1: "pink",
+          q2: "kittywhite",
+          q3: "cat",
+        };
+        let userAnswers = {
+          q1: document.querySelector('input[name="q1"]:checked'),
+          q2: document.querySelector('input[name="q2"]:checked'),
+          q3: document.querySelector('input[name="q3"]:checked'),
+        };
+        for (let key in answers) {
+          if (userAnswers[key] && userAnswers[key].value === answers[key]) {
+            score++;
+          }
+        }
+        let resultMessage = "";
+        if (score === 3) {
+          resultMessage = "🌟 You are a true Hello Kitty fan! 🎀✨";
+        } else if (score === 2) {
+          resultMessage = "💖 Almost perfect! Keep loving Hello Kitty!";
+        } else {
+          resultMessage = "😺 Try again! Hello Kitty believes in you! 💕";
+        }
+
+        document.getElementById("result").innerHTML = resultMessage;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+header h1{
+    text-align: center;
+    color: palevioletred;
+    font-size: 70px;
+    font-family: 'Pacifico', cursive;
+    font-weight:bold;
+    margin-top: 70px;
+}
+.nav{
+    margin-top: 100px;
+    margin-left: 300px;
+}
+.nav ul{
+    list-style: none;
+    padding: 0;
+}
+.nav ul li{
+    margin: 10px 0;
+}
+.home{
+    background-color: rgb(227, 134, 165);
+}
+.about{
+    background-color: rgb(221, 144, 221);
+}
+.fan{
+    background-color: rgb(176, 176, 238);
+}
+.gallery{
+    background-color: rgb(255, 255, 94);
+}
+.contact{
+    background-color: rgb(189, 247, 104);
+}
+.nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;   
+    font-size: 18px;
+    font-weight: bold;
+    padding: 17px 200px;
+    border-radius: 25px;
+    margin-left: -120px;
+    transition: 0.2s,box-shadow 0.2s;
+
+}
+.nav ul li a:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: #fff;
+}
+.img1{
+    margin-left: 700px;
+    margin-top: -700px;
+    width: 500px;
+    height: 450px;
+}
